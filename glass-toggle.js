@@ -156,9 +156,10 @@ class GlassThemeToggle extends HTMLElement {
             .icon {
                 width: 12px;
                 height: 12px;
-                fill: #000;
-                color: #000;
+                fill: #ff9f00; /* Warm Sun Amber */
+                color: #ff9f00;
                 display: block;
+                filter: drop-shadow(0 0 2px rgba(255, 159, 0, 0.4));
                 transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
 
