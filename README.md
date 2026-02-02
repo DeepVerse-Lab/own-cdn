@@ -13,7 +13,7 @@ You can use this toggle button in any project by including the CDN link in your 
 Add the following script tag to your `<head>` or before the closing `</body>` tag:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/your-username/your-repo/glass-toggle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/DeepVerse-Lab/own-cdn/glass-toggle.js"></script>
 ```
 
 *(Note: Replace the URL with your actual CDN link once hosted)*

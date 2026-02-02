@@ -27,7 +27,7 @@ class GlassThemeToggle extends HTMLElement {
         if (this.isDark) {
             html.classList.add('dark');
             container.classList.add('dark');
-            knob.style.left = '140px';
+            knob.style.left = '100px';
             liquid.style.width = '100%';
             label.textContent = 'Dark';
             icon.innerHTML = `<path d="M21 12.8A9 9 0 0 1 11.2 3 7 7 0 1 0 21 12.8z"/>`;
@@ -61,9 +61,9 @@ class GlassThemeToggle extends HTMLElement {
 
             :host {
                 display: inline-block;
-                --pill-w: 220px;
-                --pill-h: 64px;
-                --knob-size: 80px;
+                --pill-w: 160px;
+                --pill-h: 48px;
+                --knob-size: 60px;
                 --bg-light: #d1d3d6;
                 --bg-dark: #1f2328;
                 --text-color: rgba(0, 0, 0, 0.4);
@@ -94,7 +94,7 @@ class GlassThemeToggle extends HTMLElement {
                 display: flex;
                 align-items: center;
                 transition: background-color 0.5s;
-                padding: 0 40px; /* Space for labels */
+                padding: 0 30px; /* Space for labels */
                 box-sizing: border-box;
             }
 
@@ -111,7 +111,7 @@ class GlassThemeToggle extends HTMLElement {
             .label {
                 position: relative;
                 z-index: 5;
-                font-size: 26px;
+                font-size: 20px;
                 font-weight: 500;
                 letter-spacing: -0.5px;
                 transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -154,7 +154,7 @@ class GlassThemeToggle extends HTMLElement {
             /* Inner Blob / Icon Container */
             .blob {
                 position: absolute;
-                inset: 12px;
+                inset: 10px;
                 border-radius: 50%;
                 background: #e0e2e5;
                 box-shadow: 
@@ -172,8 +172,8 @@ class GlassThemeToggle extends HTMLElement {
             }
 
             .icon {
-                width: 32px;
-                height: 32px;
+                width: 24px;
+                height: 24px;
                 fill: #000;
                 transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
