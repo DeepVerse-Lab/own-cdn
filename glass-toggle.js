@@ -27,7 +27,7 @@ class GlassThemeToggle extends HTMLElement {
         if (this.isDark) {
             html.classList.add('dark');
             container.classList.add('dark');
-            knob.style.left = '76px'; // 120 - 44 = 76
+            knob.style.left = '17px'; // 80 - 34 = 46
             liquid.style.width = '100%';
             label.textContent = 'Dark';
             icon.innerHTML = `<path d="M21 12.8A9 9 0 0 1 11.2 3 7 7 0 1 0 21 12.8z"/>`;
@@ -61,9 +61,9 @@ class GlassThemeToggle extends HTMLElement {
 
             :host {
                 display: inline-block;
-                --pill-w: 120px;
-                --pill-h: 36px;
-                --knob-size: 44px;
+                --pill-w: 40px;
+                --pill-h: 18px;
+                --knob-size: 17px;
                 --bg-light: #d1d3d6;
                 --bg-dark: #1f2328;
                 --text-color: rgba(0, 0, 0, 0.4);
@@ -94,7 +94,7 @@ class GlassThemeToggle extends HTMLElement {
                 display: flex;
                 align-items: center;
                 transition: background-color 0.5s;
-                padding: 0 20px; /* Space for labels */
+                padding: 0 10px; /* Space for labels */
                 box-sizing: border-box;
             }
 
@@ -111,7 +111,7 @@ class GlassThemeToggle extends HTMLElement {
             .label {
                 position: relative;
                 z-index: 5;
-                font-size: 14px;
+                font-size: 9px;
                 font-weight: 500;
                 letter-spacing: -0.5px;
                 transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -154,7 +154,7 @@ class GlassThemeToggle extends HTMLElement {
             /* Inner Blob / Icon Container */
             .blob {
                 position: absolute;
-                inset: 8px;
+                inset: 5px;
                 border-radius: 50%;
                 background: #e0e2e5;
                 box-shadow: 
@@ -172,8 +172,8 @@ class GlassThemeToggle extends HTMLElement {
             }
 
             .icon {
-                width: 18px;
-                height: 18px;
+                width: 14px;
+                height: 14px;
                 fill: #000;
                 transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
