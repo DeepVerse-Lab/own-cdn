@@ -39,7 +39,8 @@ class GlassThemeToggle extends HTMLElement {
             liquid.style.width = '0%';
             label.textContent = 'Light';
             // Full Sun Path
-            icon.innerHTML = `<path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM2 13h2a1 1 0 1 0 0-2H2a1 1 0 1 0 0 2zm18 0h2a1 1 0 1 0 0-2h-2a1 1 0 1 0 0 2zM11 2v2a1 1 0 1 0 2 0V2a1 1 0 1 0-2 0zm0 18v2a1 1 0 1 0 2 0v-2a1 1 0 1 0-2 0zM5.99 4.58a1 1 0 1 0-1.41 1.41l1.41 1.41a1 1 0 1 0 1.41-1.41L5.99 4.58zm12.02 12.02a1 1 0 1 0-1.41 1.41l1.41 1.41a1 1 0 1 0 1.41-1.41l-1.41-1.41zM4.58 18.01a1 1 0 1 0 1.41 1.41l1.41-1.41a1 1 0 1 0-1.41-1.41l-1.41 1.41zM18.01 5.99a1 1 0 1 0 1.41-1.41l-1.41-1.41a1 1 0 1 0-1.41 1.41l1.41 1.41z"/>`;
+            // Simple Robust Sun Path
+            icon.innerHTML = `<path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-7v2m0 16v2m-7-9H3m18 0h-2m-3.05-6.95l-1.42 1.42m-8.48 8.48l-1.42 1.42m1.42-11.32l1.42 1.42m8.48 8.48l1.42 1.42" stroke="currentColor" stroke-width="2" fill="currentColor"/>`;
             localStorage.setItem('theme', 'light');
         }
 
@@ -154,11 +155,10 @@ class GlassThemeToggle extends HTMLElement {
             /* Inner Blob / Icon Container */
             .blob {
                 position: absolute;
-                inset: 3px; /* Reduced to fit icon */
+                inset: 2px; /* Decreased inset to give more space for icon */
                 border-radius: 50%;
                 background: #e0e2e5;
-                box-shadow: 
-                    inset 0 1px 2px rgba(0,0,0,0.1);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -171,15 +171,18 @@ class GlassThemeToggle extends HTMLElement {
             }
 
             .icon {
-                width: 10px; /* Scaled down to fit blob (17 - 3 - 3 = 11px) */
-                height: 10px;
+                width: 12px;
+                height: 12px;
                 fill: #000;
+                color: #000;
+                display: block;
                 transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
 
             .container.dark .icon {
                 fill: #fff;
-                filter: drop-shadow(0 0 4px rgba(255,255,255,0.8));
+                color: #fff;
+                filter: drop-shadow(0 0 3px rgba(255,255,255,0.8));
             }
 
             /* Refractions for more realism */
