@@ -64,7 +64,7 @@ class GlassThemeToggle extends HTMLElement {
             :host {
                 display: inline-block;
                 --pill-w: 40px;
-                --pill-h: 18px;
+                --pill-h: 12px;
                 --knob-size: 17px;
                 --bg-light: #d1d3d6;
                 --bg-dark: #1f2328;
@@ -91,12 +91,12 @@ class GlassThemeToggle extends HTMLElement {
                 border-radius: 999px;
                 box-shadow: 
                     inset 0 1px 4px rgba(0,0,0,0.1),
-                    0 4px 12px rgba(0,0,0,0.1);
+                    0 2px 8px rgba(0,0,0,0.1);
                 overflow: hidden;
                 display: flex;
                 align-items: center;
                 transition: background-color 0.5s;
-                padding: 0 4px; /* Reduced for tiny scale */
+                padding: 0;
                 box-sizing: border-box;
             }
 
@@ -111,24 +111,7 @@ class GlassThemeToggle extends HTMLElement {
             }
 
             .label {
-                position: relative;
-                z-index: 5;
-                font-size: 6px; /* High reduction for 40px scale */
-                font-weight: 500;
-                letter-spacing: -0.2px;
-                transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-                color: var(--text-color);
-                width: 100%;
-                text-align: center;
-            }
-
-            .container.dark .label {
-                color: var(--text-color-dark);
-                transform: translateX(-8px);
-            }
-
-            .container:not(.dark) .label {
-                transform: translateX(8px);
+               display: none;
             }
 
             .knob {
