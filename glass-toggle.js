@@ -62,8 +62,8 @@ class GlassThemeToggle extends HTMLElement {
             :host {
                 display: inline-block;
                 --pill-w: 120px;
-                --pill-h: 36px;
-                --knob-size: 44px;
+                --pill-h: 48px;
+                --knob-size: 60px;
                 --bg-light: #d1d3d6;
                 --bg-dark: #1f2328;
                 --text-color: rgba(0, 0, 0, 0.4);
