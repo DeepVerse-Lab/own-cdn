@@ -27,7 +27,7 @@ class GlassThemeToggle extends HTMLElement {
         if (this.isDark) {
             html.classList.add('dark');
             container.classList.add('dark');
-            knob.style.left = '17px'; // 80 - 34 = 46
+            knob.style.left = '23px'; // 40 - 17 = 23
             liquid.style.width = '100%';
             label.textContent = 'Dark';
             icon.innerHTML = `<path d="M21 12.8A9 9 0 0 1 11.2 3 7 7 0 1 0 21 12.8z"/>`;
@@ -38,7 +38,8 @@ class GlassThemeToggle extends HTMLElement {
             knob.style.left = '0px';
             liquid.style.width = '0%';
             label.textContent = 'Light';
-            icon.innerHTML = `<path d="M12 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1z"/>`;
+            // Full Sun Path
+            icon.innerHTML = `<path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM2 13h2a1 1 0 1 0 0-2H2a1 1 0 1 0 0 2zm18 0h2a1 1 0 1 0 0-2h-2a1 1 0 1 0 0 2zM11 2v2a1 1 0 1 0 2 0V2a1 1 0 1 0-2 0zm0 18v2a1 1 0 1 0 2 0v-2a1 1 0 1 0-2 0zM5.99 4.58a1 1 0 1 0-1.41 1.41l1.41 1.41a1 1 0 1 0 1.41-1.41L5.99 4.58zm12.02 12.02a1 1 0 1 0-1.41 1.41l1.41 1.41a1 1 0 1 0 1.41-1.41l-1.41-1.41zM4.58 18.01a1 1 0 1 0 1.41 1.41l1.41-1.41a1 1 0 1 0-1.41-1.41l-1.41 1.41zM18.01 5.99a1 1 0 1 0 1.41-1.41l-1.41-1.41a1 1 0 1 0-1.41 1.41l1.41 1.41z"/>`;
             localStorage.setItem('theme', 'light');
         }
 
@@ -88,13 +89,13 @@ class GlassThemeToggle extends HTMLElement {
                 background-color: var(--bg-light);
                 border-radius: 999px;
                 box-shadow: 
-                    inset 0 2px 8px rgba(0,0,0,0.1),
-                    0 8px 25px rgba(0,0,0,0.1);
+                    inset 0 1px 4px rgba(0,0,0,0.1),
+                    0 4px 12px rgba(0,0,0,0.1);
                 overflow: hidden;
                 display: flex;
                 align-items: center;
                 transition: background-color 0.5s;
-                padding: 0 10px; /* Space for labels */
+                padding: 0 4px; /* Reduced for tiny scale */
                 box-sizing: border-box;
             }
 
@@ -111,9 +112,9 @@ class GlassThemeToggle extends HTMLElement {
             .label {
                 position: relative;
                 z-index: 5;
-                font-size: 9px;
+                font-size: 6px; /* High reduction for 40px scale */
                 font-weight: 500;
-                letter-spacing: -0.5px;
+                letter-spacing: -0.2px;
                 transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
                 color: var(--text-color);
                 width: 100%;
@@ -122,11 +123,11 @@ class GlassThemeToggle extends HTMLElement {
 
             .container.dark .label {
                 color: var(--text-color-dark);
-                transform: translateX(-20px);
+                transform: translateX(-8px);
             }
 
             .container:not(.dark) .label {
-                transform: translateX(20px);
+                transform: translateX(8px);
             }
 
             .knob {
@@ -142,24 +143,22 @@ class GlassThemeToggle extends HTMLElement {
                 
                 /* Glass Effect */
                 background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
-                backdrop-filter: blur(15px);
-                -webkit-backdrop-filter: blur(15px);
-                border: 0.5px solid rgba(255, 255, 255, 0.5);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                border: 0.2px solid rgba(255, 255, 255, 0.5);
                 box-shadow: 
-                    0 10px 30px rgba(0,0,0,0.3),
-                    inset 0 0 20px rgba(255,255,255,0.4),
-                    inset 0 0 5px rgba(255,255,255,0.6);
+                    0 4px 10px rgba(0,0,0,0.3),
+                    inset 0 0 5px rgba(255,255,255,0.4);
             }
 
             /* Inner Blob / Icon Container */
             .blob {
                 position: absolute;
-                inset: 5px;
+                inset: 3px; /* Reduced to fit icon */
                 border-radius: 50%;
                 background: #e0e2e5;
                 box-shadow: 
-                    inset 0 2px 4px rgba(0,0,0,0.1),
-                    0 4px 10px rgba(0,0,0,0.05);
+                    inset 0 1px 2px rgba(0,0,0,0.1);
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -168,19 +167,19 @@ class GlassThemeToggle extends HTMLElement {
 
             .container.dark .blob {
                 background: #111418;
-                box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+                box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
             }
 
             .icon {
-                width: 14px;
-                height: 14px;
+                width: 10px; /* Scaled down to fit blob (17 - 3 - 3 = 11px) */
+                height: 10px;
                 fill: #000;
                 transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
 
             .container.dark .icon {
                 fill: #fff;
-                filter: drop-shadow(0 0 8px rgba(255,255,255,0.8));
+                filter: drop-shadow(0 0 4px rgba(255,255,255,0.8));
             }
 
             /* Refractions for more realism */
