@@ -27,7 +27,7 @@ class GlassThemeToggle extends HTMLElement {
         if (this.isDark) {
             html.classList.add('dark');
             container.classList.add('dark');
-            knob.style.left = '100px';
+            knob.style.left = '50px';
             liquid.style.width = '100%';
             label.textContent = 'Dark';
             icon.innerHTML = `<path d="M21 12.8A9 9 0 0 1 11.2 3 7 7 0 1 0 21 12.8z"/>`;
